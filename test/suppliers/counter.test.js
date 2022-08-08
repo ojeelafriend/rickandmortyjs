@@ -4,7 +4,7 @@ const mock = require('../../src/requests/mock/character');
 describe('Counter reaction in the skeleton return: ', () => {
   const skeleton = {
     char: mock.char,
-    count: mock.standardChar,
+    count: mock.repetitions,
     resource: mock.entity,
   };
 
