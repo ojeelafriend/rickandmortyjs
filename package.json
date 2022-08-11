@@ -4,8 +4,10 @@
   "description": "Challenge de Chipax",
   "main": "output.js",
   "scripts": {
+
     "api": "cross-env NODE_ENV=development node ./src/api/server.js",
     "dev": "cross-env NODE_ENV=development nodemon ./src/output.js",
+
     "test": "cross-env NODE_ENV=test jest"
   },
   "keywords": [
@@ -20,8 +22,10 @@
     "nodemon": "^2.0.19"
   },
   "dependencies": {
+
     "express": "^4.18.1",
     "node-fetch": "^3.2.10"
+
   },
   "jest": {
     "verbose": true,

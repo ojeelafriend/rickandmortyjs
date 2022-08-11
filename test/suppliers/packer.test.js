@@ -1,8 +1,11 @@
+
 const { counterSkeleton, initialInfo, episodesWithLocationsSkeleton } = require('../../src/requests/mock/outputs');
+
 const packer = require('../../src/suppliers/packer');
 
 describe('Build counter packer', () => {
   test('should return a exercise name, time, in_time and the results', () => {});
+
   const { location, episode, character } = counterSkeleton;
 
   const result = packer.buildCounter(location, episode, character);
@@ -22,4 +25,5 @@ describe('Build episodes with locations packer', () => {
 
     expect(result).toStrictEqual(initialInfo);
   });
+
 });
