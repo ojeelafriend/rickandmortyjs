@@ -1,3 +1,4 @@
+
 const buildInitialInfo = {
   excercise_name: '',
   time: 0,
@@ -26,3 +27,4 @@ const buildEpisodes = (episodeWithLocations) => {
 };
 
 module.exports = { buildCounter, buildEpisodes };
+

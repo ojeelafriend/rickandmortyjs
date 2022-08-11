@@ -36,6 +36,7 @@ class Notifier {
   static checkStage() {
     if (process.env.NODE_ENV == 'test') return true;
   }
+
 }
 
 module.exports = Notifier;
