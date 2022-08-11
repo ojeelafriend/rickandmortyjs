@@ -5,6 +5,12 @@ const buildInitialInfo = {
   results: undefined,
 };
 
+/*
+  Partiendo de un skeleton (buildInitialInfo) se setearán
+  los nombres de los retos y devolverá el cuerpo completo
+  con la información que gestionan los casos de uso.
+*/
+
 const buildCounter = (location, episode, character) => {
   buildInitialInfo.excercise_name = 'Char counter';
   buildInitialInfo.results = [location, episode, character];

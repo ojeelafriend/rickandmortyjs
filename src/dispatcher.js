@@ -2,6 +2,13 @@ const linker = require('./usecase/linker');
 const skeleton = require('./suppliers/counter');
 const { buildCounter, buildEpisodes } = require('./suppliers/packer');
 
+/*
+  dispatcher es responsable de enviar la información
+  totalmente estructurada como se pide en cada reto.
+  Componiendo los objetos y midiendo cuánto tiempo
+  se demora este proceso, entre los casos de uso, notifier y el packer.
+*/
+
 async function dispatchCounter() {
   let start = Date.now();
   const location = await skeleton({ char: 'l', entity: 'location' });
