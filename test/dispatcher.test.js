@@ -1,8 +1,11 @@
+
 const { counterSkeleton, episodesWithLocationsSkeleton, initialInfo } = require('../src/requests/mock/outputs');
+
 const dispatcher = require('../src/dispatcher');
 
 describe('Dispatch counter', () => {
   test('should return integration the suppliers (counter with packer build)', async () => {
+
     const { location, episode, character } = counterSkeleton;
 
     const result = await dispatcher.dispatchCounter();
@@ -28,5 +31,6 @@ describe('Dispatch episode locations', () => {
     initialInfo.results = episodesWithLocationsSkeleton;
 
     expect(result).toStrictEqual(initialInfo);
+
   });
 });

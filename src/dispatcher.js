@@ -1,4 +1,6 @@
+
 const linker = require('./usecase/linker');
+
 const skeleton = require('./suppliers/counter');
 const packer = require('./suppliers/packer');
 
@@ -17,6 +19,7 @@ async function dispatchCounter() {
   return wrapper;
 }
 
+
 async function dispatchEpisode() {
   let start = Date.now();
   let wrapper = packer.buildEpisodes(await linker());
@@ -29,3 +32,6 @@ async function dispatchEpisode() {
 }
 
 module.exports = { dispatchCounter, dispatchEpisode };
+
+
+

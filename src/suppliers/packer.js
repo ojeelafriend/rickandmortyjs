@@ -7,6 +7,7 @@ const buildCounter = (location, episode, character) => {
   };
 };
 
+
 const buildEpisodes = (episodeWithLocations) => {
   return {
     excercise_name: 'Episode locations',
@@ -17,3 +18,4 @@ const buildEpisodes = (episodeWithLocations) => {
 };
 
 module.exports = { buildCounter, buildEpisodes };
+
