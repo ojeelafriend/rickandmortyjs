@@ -1,19 +1,36 @@
-const mock = require('../src/requests/mock/finalResult');
+
+const { counterSkeleton, episodesWithLocationsSkeleton, initialInfo } = require('../src/requests/mock/outputs');
+
 const dispatcher = require('../src/dispatcher');
 
 describe('Dispatch counter', () => {
   test('should return integration the suppliers (counter with packer build)', async () => {
-    let start = Date.now();
+
+    const { location, episode, character } = counterSkeleton;
 
     const result = await dispatcher.dispatchCounter();
 
-    let end = Date.now();
+    initialInfo.excercise_name = 'Char counter';
+    initialInfo.time = result.time;
+    initialInfo.in_time = result.in_time;
 
-    const duration = end - start;
+    initialInfo.results = [location, episode, character];
 
-    mock.data.time = `${duration}ms`;
-    mock.data.in_time = duration < 3000;
+    expect(result).toStrictEqual(initialInfo);
+  });
+});
 
-    expect(result).toStrictEqual(mock.data);
+describe('Dispatch episode locations', () => {
+  test('should return integration the suppliers (packer build)', async () => {
+    const result = await dispatcher.dispatchEpisode();
+
+    initialInfo.excercise_name = 'Episode locations';
+    initialInfo.time = result.time;
+    initialInfo.in_time = result.in_time;
+
+    initialInfo.results = episodesWithLocationsSkeleton;
+
+    expect(result).toStrictEqual(initialInfo);
+
   });
 });
