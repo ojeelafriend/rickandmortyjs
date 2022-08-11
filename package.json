@@ -1,13 +1,16 @@
 {
   "name": "rickandmortyjs",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Challenge de Chipax",
+  "main": "output.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon ./src/server.js",
+    "api": "cross-env NODE_ENV=development node ./src/api/server.js",
+    "dev": "cross-env NODE_ENV=development nodemon ./src/output.js",
     "test": "cross-env NODE_ENV=test jest"
   },
-  "keywords": [],
+  "keywords": [
+    "javascript, challenge, rickandmorty"
+  ],
   "author": "odev",
   "license": "MIT",
   "devDependencies": {
@@ -17,6 +20,7 @@
     "nodemon": "^2.0.19"
   },
   "dependencies": {
+    "express": "^4.18.1",
     "node-fetch": "^3.2.10"
   },
   "jest": {
