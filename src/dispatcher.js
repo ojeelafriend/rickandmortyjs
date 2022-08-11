@@ -25,9 +25,9 @@ async function dispatchCounter() {
   wrapper.time = `${end - start}ms`;
   wrapper.in_time = end - start < 3000;
 
-  return wrapper;
-}
 
+  return [wrapper];
+}
 
 async function dispatchEpisode() {
   let start = Date.now();
@@ -38,7 +38,8 @@ async function dispatchEpisode() {
   wrapper.time = `${end - start}ms`;
   wrapper.in_time = end - start < 3000;
 
-  return wrapper;
-}
+
+  return [wrapper];
+
 
 module.exports = { dispatchCounter, dispatchEpisode };
