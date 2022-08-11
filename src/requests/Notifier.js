@@ -12,6 +12,16 @@ class Notifier {
     const response = await fetch(`https://rickandmortyapi.com/api/${entity}`);
     return await response.json();
   }
+
+  static async getAllEpisodes() {
+    const response = await fetch(`https://rickandmortyapi.com/api/episode`);
+    return await response.json();
+  }
+
+  static async getCharacterById(ids = []) {
+    const response = await fetch(`https://rickandmortyapi.com/api/character/${ids}`);
+    return await response.json();
+  }
 }
 
 module.exports = Notifier;
