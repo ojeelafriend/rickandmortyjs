@@ -17,8 +17,7 @@
     "nodemon": "^2.0.19"
   },
   "dependencies": {
-    "node-fetch": "^3.2.10",
-    "redis": "^4.2.0"
+    "node-fetch": "^3.2.10"
   },
   "jest": {
     "verbose": true,
