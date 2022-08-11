@@ -1,6 +1,6 @@
 const linker = require('./usecase/linker');
 const skeleton = require('./suppliers/counter');
-const packer = require('./suppliers/packer');
+const { buildCounter, buildEpisodes } = require('./suppliers/packer');
 
 async function dispatchCounter() {
   let start = Date.now();
@@ -8,7 +8,7 @@ async function dispatchCounter() {
   const episode = await skeleton({ char: 'e', entity: 'episode' });
   const character = await skeleton({ char: 'c', entity: 'character' });
 
-  let wrapper = packer.buildCounter(location, episode, character);
+  let wrapper = buildCounter(location, episode, character);
   let end = Date.now();
 
   wrapper.time = `${end - start}ms`;
@@ -19,7 +19,7 @@ async function dispatchCounter() {
 
 async function dispatchEpisode() {
   let start = Date.now();
-  let wrapper = packer.buildEpisodes(await linker());
+  let wrapper = buildEpisodes(await linker());
   let end = Date.now();
 
   wrapper.time = `${end - start}ms`;
