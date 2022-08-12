@@ -59,7 +59,7 @@ GET `localhost:3000/episodes` Episode locations.
 
 GET `localhost:3000/counter` Char counter.
 
-GET `localhost:3000/` All excercise.
+GET `localhost:3000/` All exercise.
 
 ---
 
