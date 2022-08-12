@@ -1,5 +1,5 @@
 const initialInfo = {
-  excercise_name: '',
+  exercise_name: '',
   time: 0,
   in_time: false,
   results: undefined,
