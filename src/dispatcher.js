@@ -1,4 +1,3 @@
-
 const linker = require('./usecase/linker');
 const skeleton = require('./suppliers/counter');
 const { buildCounter, buildEpisodes } = require('./suppliers/packer');
@@ -10,13 +9,11 @@ const { buildCounter, buildEpisodes } = require('./suppliers/packer');
   se demora este proceso, entre los casos de uso, notifier y el packer.
 */
 
-
 async function dispatchCounter() {
   let start = Date.now();
   const location = await skeleton({ char: 'l', entity: 'location' });
   const episode = await skeleton({ char: 'e', entity: 'episode' });
   const character = await skeleton({ char: 'c', entity: 'character' });
-
 
   let wrapper = buildCounter(location, episode, character);
 
@@ -25,8 +22,7 @@ async function dispatchCounter() {
   wrapper.time = `${end - start}ms`;
   wrapper.in_time = end - start < 3000;
 
-
-  return [wrapper];
+  return wrapper;
 }
 
 async function dispatchEpisode() {
@@ -38,8 +34,7 @@ async function dispatchEpisode() {
   wrapper.time = `${end - start}ms`;
   wrapper.in_time = end - start < 3000;
 
-
-  return [wrapper];
-
+  return wrapper;
+}
 
 module.exports = { dispatchCounter, dispatchEpisode };
